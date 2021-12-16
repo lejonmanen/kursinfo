@@ -3,17 +3,18 @@ import Schedule from './components/Schedule'
 import Collapsible from './components/Collapsible'
 import Search from './components/Search'
 import './App.css';
+import { meta } from './utils/data'
 
 function App() {
     return (
         <div className="app">
         <header>
-            <h1> Kursinfo </h1>
+            <h1> {meta.courseName} </h1>
         </header>
         <main>
-            <Collapsible title={'Kursens namn'}>
-                <h3> Klass, termin, skola, stad </h3>
-                <p> Allmän info, kontaktuppgifter till läraren osv. </p>
+            <Collapsible title={'Allmänt'}>
+                <h3> {meta.className}, {meta.term}, {meta.school}, {meta.city} </h3>
+                <p> {meta.general} </p>
             </Collapsible>
             <hr/>
             <Collapsible title={'Sök'} initialShow={false}>
